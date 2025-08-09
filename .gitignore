@@ -1,14 +1,18 @@
-node_modules
-.expo
-.expo-shared
+# Node modules
+node_modules/
+
+# Expo
+.expo/
+.expo-shared/
+
+# Logs
 npm-debug.log
 yarn-error.log
+
+# OS generated files
 desktop.ini
 Thumbs.db
-node_modules
-.expo
-.expo-shared
-npm-debug.log
-yarn-error.log
-desktop.ini
-Thumbs.db
+
+# Build outputs
+dist/
+build/
