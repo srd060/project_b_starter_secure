@@ -4,6 +4,9 @@
       "eas": {
         "projectId": "fdc6d649-1854-45fc-9c64-89d68468c769"
       }
+    },
+    "android": {
+      "package": "com.shivaborewell.projectbborewelllog"
     }
   }
 }

@@ -10,17 +10,17 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "expo": "~48.0.0",
-    "react": "18.2.0",
-    "react-native": "0.71.8",
-    "expo-status-bar": "~1.4.4",
+    "expo": "^53.0.0",
+    "react": "19.0.0",
+    "react-native": "0.79.5",
+    "expo-status-bar": "~2.2.3",
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/bottom-tabs": "^6.5.7",
-    "react-native-safe-area-context": "4.5.0",
-    "react-native-screens": "~3.20.0",
+    "react-native-safe-area-context": "5.4.0",
+    "react-native-screens": "~4.11.1",
     "firebase": "^9.22.1",
-    "expo-file-system": "*",
-    "expo-sharing": "*",
+    "expo-file-system": "~18.1.11",
+    "expo-sharing": "~13.1.5",
     "xlsx": "*"
   }
 }
