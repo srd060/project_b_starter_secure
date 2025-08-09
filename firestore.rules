@@ -1,0 +1,23 @@
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Vehicles: only owner can read/write
+    match /vehicles/{vehicleId} {
+      allow create: if request.auth != null && request.resource.data.ownerId == request.auth.uid;
+      allow read: if request.auth != null && resource.data.ownerId == request.auth.uid;
+      allow update, delete: if request.auth != null && resource.data.ownerId == request.auth.uid;
+    }
+
+    // Collections tied to vehicleId: only allow if user is authenticated and vehicle belongs to user
+    function vehicleOwned(vehicleId) {
+      return request.auth != null &&
+        get(/databases/$(database)/documents/vehicles/$(vehicleId)).data.ownerId == request.auth.uid;
+    }
+
+    match /{col}/{docId} {
+      allow create: if request.auth != null && ('vehicleId' in request.resource.data ? vehicleOwned(request.resource.data.vehicleId) : true);
+      allow read, update, delete: if request.auth != null && ('vehicleId' in resource.data ? vehicleOwned(resource.data.vehicleId) : true);
+    }
+  }
+}
